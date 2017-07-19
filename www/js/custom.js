@@ -1,6 +1,6 @@
 
-var apikey    = "cdf9b2a1e5dc4a4d4bf13e3d9f2039543aafceb8908cbc392730203846bde5e8";
-var clientkey = "90f9bcb20742e828910d551dd04284148f937523b4609e29f5e210f1046a51c6";
+var apikey    = "6a73c78b3fe8f0100e07368a7123453dd8487a331a3b9f74f584c191ad1e764f";
+var clientkey = "267ec4a933003ce35cdfc2e4e2e8ebf4787e8420b4c8b1ad90b03028c5414213";
 var ncmb      = new NCMB(apikey, clientkey);
 
 function sendResult() {
@@ -22,7 +22,8 @@ function recieveResult() {
 
   Message.fetchAll()
          .then(function(result){
-           result = result.length - 1;
+           result = result[result.length - 1].get("result");
+           // contents[Math.floor(Math.random() * contents.length)].get("contents")
             window.alert("前回送ったのは「" + result + "」だよ！");
           })
          .catch(function(err){
