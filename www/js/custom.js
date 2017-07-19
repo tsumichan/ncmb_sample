@@ -7,7 +7,7 @@ function sendResult() {
   var Message = ncmb.DataStore("Message");
   var message = new Message();
 
-  message.set("result", "成功してるよ〜〜")
+  message.set("result", "成功してるよ〜〜！！")
          .save()
          .then(function(){
           window.alert("送信完了！");
@@ -22,6 +22,7 @@ function recieveResult() {
 
   Message.fetchAll()
          .then(function(result){
+           //最新の一件を取得する
            result = result[result.length - 1].get("result");
            // contents[Math.floor(Math.random() * contents.length)].get("contents")
             window.alert("前回送ったのは「" + result + "」だよ！");
